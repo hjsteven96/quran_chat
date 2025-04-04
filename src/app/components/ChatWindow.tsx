@@ -62,7 +62,7 @@ const ChatWindow: React.FC = () => {
   return (
     <div className="flex flex-col h-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border border-emerald-200">
       <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white p-3 md:p-5 text-center sticky top-0 z-10">
-        <h1 className="text-xl md:text-2xl font-bold">Quran Knowledge Assistant</h1>
+        <h1 className="text-xl md:text-2xl font-bold">Mufko Chat (beta)</h1>
         <p className="text-xs md:text-sm mt-1 opacity-90">Ask about the wisdom and teachings of the Quran</p>
         <div className="absolute top-2 md:top-4 right-2 md:right-4 opacity-70">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

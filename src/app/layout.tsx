@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Quran Knowledge Assistant',
+  title: 'Mufko Quran Chat',
   description: 'Get answers to your questions about the Quran',
   icons: {
     icon: '/favicon.ico',
