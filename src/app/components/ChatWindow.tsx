@@ -61,7 +61,7 @@ const ChatWindow: React.FC = () => {
 
   return (
     <div className="flex flex-col h-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border border-emerald-200">
-      <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white p-3 md:p-5 text-center">
+      <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white p-3 md:p-5 text-center sticky top-0 z-10">
         <h1 className="text-xl md:text-2xl font-bold">Quran Knowledge Assistant</h1>
         <p className="text-xs md:text-sm mt-1 opacity-90">Ask about the wisdom and teachings of the Quran</p>
         <div className="absolute top-2 md:top-4 right-2 md:right-4 opacity-70">
@@ -71,7 +71,7 @@ const ChatWindow: React.FC = () => {
         </div>
       </div>
       
-      <div className="flex-1 overflow-y-auto p-3 md:p-5 bg-gradient-to-b from-gray-50 to-white">
+      <div className="flex-1 overflow-y-auto p-3 md:p-5 bg-gradient-to-b from-gray-50 to-white" style={{ paddingBottom: '70px' }}>
         {messages.map((message, index) => (
           <ChatMessage key={index} message={message} />
         ))}
@@ -97,7 +97,9 @@ const ChatWindow: React.FC = () => {
         <div ref={messagesEndRef} />
       </div>
       
-      <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+      <div className="sticky bottom-0 left-0 right-0 z-10 bg-gray-50">
+        <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+      </div>
     </div>
   );
 };
