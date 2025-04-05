@@ -1,6 +1,7 @@
 // Firebase SDK에서 필요한 함수들을 가져옵니다.
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported, Analytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
 // Firebase 설정 정보
 const firebaseConfig = {
@@ -23,5 +24,8 @@ if (typeof window !== "undefined") {
     analytics = isSupported().then((yes) => (yes ? getAnalytics(app) : null));
 }
 
-// 초기화된 Firebase 앱과 analytics를 내보냅니다. 필요에 따라 다른 Firebase 서비스 (auth, firestore 등)도 여기서 초기화하고 내보낼 수 있습니다.
-export { app, analytics };
+// Firestore 초기화
+const db = getFirestore(app);
+
+// 초기화된 Firebase 앱, analytics, db를 내보냅니다. 필요에 따라 다른 Firebase 서비스 (auth, firestore 등)도 여기서 초기화하고 내보낼 수 있습니다.
+export { app, analytics, db };
