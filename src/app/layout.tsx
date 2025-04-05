@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { analytics } from "@/lib/firebase";
 import { logEvent } from "firebase/analytics";
 import Analytics from "./components/Analytics";
+import { Suspense } from "react";
 
 // Arabic font
 const amiri = Amiri({
@@ -37,7 +38,9 @@ export default function RootLayout({
                 className={`${inter.variable} ${amiri.variable} font-sans min-h-screen islamic-pattern`}
             >
                 {children}
-                <Analytics />
+                <Suspense fallback={null}>
+                    <Analytics />
+                </Suspense>
             </body>
         </html>
     );
